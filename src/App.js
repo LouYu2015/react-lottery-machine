@@ -16,13 +16,13 @@ class App extends React.Component {
   render = () => {
     return (
       <div>
-        <Route path="/settings">
+        <Route exact path="/settings">
           <Settings
             onListChange={this.onListChange}
             participants={this.state.participants}
             winners={this.state.winners} />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Lottery
             participants={this.state.participants}
             winners={this.state.winners} />
