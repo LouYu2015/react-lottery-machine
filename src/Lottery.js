@@ -22,6 +22,7 @@ class Lottery extends React.Component {
     let participants = this.props.participants;
     let winners = this.props.winners;
     if (winners.length >= participants.length) {
+      this.setState({running: false});
       return;
     }
 
@@ -35,6 +36,20 @@ class Lottery extends React.Component {
   }
 
 	render = () => {
+    let startButton = (
+			<button
+          onClick={() => this.setState({running: true})}
+          className="btn btn-outline-primary">
+        Start
+      </button>);
+    let stopButton = (
+			<button
+          onClick={() => this.setState({running: false})}
+          className="btn btn-outline-primary">
+        Stop
+      </button>
+    );
+
 		return (
 		<div>
 			<p>
@@ -42,15 +57,18 @@ class Lottery extends React.Component {
 					this.state.currentWinner:
 					"Please Press Start"}
 			</p>
-			<button onClick={() => this.setState({running: true})}>
-        Start
+      {this.state.running?
+        stopButton:
+        startButton}
+			<button
+          className="btn btn-outline-primary">
+        Save
       </button>
-			<button onClick={() => this.setState({running: false})}>
-        Stop
-      </button>
-			<button>Save</button>
 			<Link to="/settings">
-				<button>Settings</button>
+				<button
+            className="btn btn-outline-primary">
+          Settings
+        </button>
 			</Link>
 		</div>)
 	}
