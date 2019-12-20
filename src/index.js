@@ -5,7 +5,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
-ReactDOM.render(<App />,
+ReactDOM.render(
+    <BrowserRouter>
+      <Route path="/">
+          <App />
+      </Route>
+    </BrowserRouter>,
     document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
