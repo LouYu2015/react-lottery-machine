@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import './Settings/Settings'
 import Settings from './Settings/Settings';
+import Lottery from './Lottery'
 import { Route, Router } from 'react-router-dom';
 
 class App extends React.Component {
@@ -19,10 +20,12 @@ class App extends React.Component {
           <Settings
             onListChange={this.onListChange}
             participants={this.state.participants}
-            winners={this.state.winners}/>
+            winners={this.state.winners} />
         </Route>
         <Route path="/">
-          <p> {this.state.winners.join(",")} </p>
+          <Lottery
+            participants={this.state.participants}
+            winners={this.state.winners} />
         </Route>
       </div>
     );
