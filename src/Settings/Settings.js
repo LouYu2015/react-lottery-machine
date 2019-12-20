@@ -31,7 +31,14 @@ class Settings extends React.Component {
 			this.props.participants.filter(str => str.length > 0));
 		this.props.onListChange("winners",
 			this.props.winners.filter(str => str.length > 0));
-	}
+  }
+  
+  // Called when adding a range of numbes
+  // nameList: a list of strings for participants
+  onBatchAdd = (nameList) => {
+    this.props.onListChange("participants",
+      this.props.participants.concat(nameList));
+  }
 
 	render = () => {
 		return (
@@ -59,7 +66,7 @@ class Settings extends React.Component {
 				</label>
 
         {/* Batch add */}
-				<BatchAdd />
+				<BatchAdd onAdd={this.onBatchAdd}/>
 
         {/* Winner list */}
 				<label>
