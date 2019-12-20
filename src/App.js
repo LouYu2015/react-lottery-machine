@@ -8,19 +8,23 @@ class App extends React.Component {
   state = {participants: [],
       winners: []};
 
-
   onListChange = (listName, content) => {
     this.setState({[listName]: content});
   }
 
   render = () => {
     return (
-        <Route>
+      <div>
+        <Route path="/settings">
           <Settings
             onListChange={this.onListChange}
             participants={this.state.participants}
             winners={this.state.winners}/>
         </Route>
+        <Route path="/">
+          <p> {this.state.winners.join(",")} </p>
+        </Route>
+      </div>
     );
   }
 }

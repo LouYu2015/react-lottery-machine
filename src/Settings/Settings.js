@@ -4,16 +4,28 @@ import './BatchAdd'
 import BatchAdd from './BatchAdd';
 
 class Settings extends React.Component {
+  /**
+   * props:
+   *   participants: a list of strings for participants' name
+   *   winners: a list of strings for winners' name
+   *   onListChange(listName, content): callback when the list changes.
+   *     listName is the name of list that changes.
+   *     content is the new list.
+   */
+
+  // Called when the user edits the list
 	onListTextboxChange = (event) => {
 		this.props.onListChange(event.target.name,
 			event.target.value.split("\n"));
 	}
 
+  // Called when the user click "clear"
 	onClear = (event) => {
 		this.props.onListChange(event.target.name,
 			[]);
 	}
 
+  // Called before exiting settings page
 	onExit = (event) => {
 		this.props.onListChange("participants",
 			this.props.participants.filter(str => str.length > 0));
@@ -24,12 +36,15 @@ class Settings extends React.Component {
 	render = () => {
 		return (
 			<div>
-				<Link to="/about">
+        {/* Exit button */}
+				<Link to="/">
 				<button
 					onClick={this.onExit}>
 						Back
 				</button>
 				</Link>
+
+        {/* Participants list */}
 				<label>
 					Participants list:
 					<textarea
@@ -43,8 +58,10 @@ class Settings extends React.Component {
 					</button>
 				</label>
 
+        {/* Batch add */}
 				<BatchAdd />
 
+        {/* Winner list */}
 				<label>
 					Winners:
 					<textarea
