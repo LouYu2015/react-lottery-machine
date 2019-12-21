@@ -16,12 +16,18 @@ class Lottery extends React.Component {
       this.onWinnerUpdate();
     }
   }
+
+  canStart = () => {
+    let participants = this.props.participants;
+    let winners = this.props.winners;
+    return winners.length < participants.length;
+  }
     
 	onWinnerUpdate = () => {
     let winner;
     let participants = this.props.participants;
     let winners = this.props.winners;
-    if (winners.length >= participants.length) {
+    if (!this.canStart()) {
       this.setState({running: false});
       return;
     }
@@ -44,7 +50,8 @@ class Lottery extends React.Component {
     let startButton = (
 			<button
           onClick={() => this.setState({running: true})}
-          className="btn btn-primary mx-2">
+          className="btn btn-primary mx-2"
+          disabled={!this.canStart()}>
         Start
       </button>);
     let stopButton = (
