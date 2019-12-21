@@ -49,17 +49,20 @@ class Settings extends React.Component {
   }
 
 	render = () => {
+    let exitButton = (
+				<p>
+        <Link
+            to="/"
+            className="btn btn-primary"
+            onClick={this.onExit}>
+          Back
+        </Link>
+      </p>)
+
 		return (
 			<div className="section">
 		    {/* Exit button */}
-				<p>
-          <Link
-              to="/"
-              className="btn btn-primary"
-              onClick={this.onExit}>
-            Back
-          </Link>
-        </p>
+        {exitButton}
 
 		    {/* Participants list */}
         <h1>Participants</h1>
@@ -118,6 +121,7 @@ class Settings extends React.Component {
             onChange={this.onGracePeriodChange} />
             seconds.
         </label></p>
+        {exitButton}
 			</div>)
 	}
 }
