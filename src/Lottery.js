@@ -84,7 +84,7 @@ class Lottery extends React.Component {
       {this.canStart()?
         lotteryNumber:
         <div class="alert alert-warning">
-          There's not valid participant. Please check settings.
+          There's no valid participant. Please check settings.
           Note that, because past winners can't win again, the game can't continue
           if all participants have win. In this case, please clear the winner list.
         </div>}
