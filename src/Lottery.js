@@ -87,7 +87,7 @@ class Lottery extends React.Component {
           startButton}
         <button
             className="btn btn-info mx-2"
-            disabled={this.state.running || this.state.currentWinner == undefined}
+            disabled={this.state.running || this.state.currentWinner === undefined}
             onClick={this.onSave}>
           Save
         </button>
