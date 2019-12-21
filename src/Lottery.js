@@ -57,10 +57,11 @@ class Lottery extends React.Component {
 
 		return (
 		<div className="section">
+      {/* Lottery number */}
 			<p className="lotteryNumber">
 				{this.state.currentWinner?
 					this.state.currentWinner:
-					"Please Press Start"}
+					"Ready"}
 			</p>
 
       {/* Buttons */}
