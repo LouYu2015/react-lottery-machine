@@ -45,38 +45,43 @@ class Lottery extends React.Component {
     let startButton = (
 			<button
           onClick={() => this.setState({running: true})}
-          className="btn btn-outline-primary">
+          className="btn btn-primary mx-2">
         Start
       </button>);
     let stopButton = (
 			<button
           onClick={() => this.setState({running: false})}
-          className="btn btn-outline-primary">
+          className="btn btn-danger mx-2">
         Stop
       </button>
     );
 
 		return (
-		<div>
-			<p>
+		<div className="section">
+			<p className="lotteryNumber">
 				{this.state.currentWinner?
 					this.state.currentWinner:
 					"Please Press Start"}
 			</p>
-      {this.state.running?
-        stopButton:
-        startButton}
-			<button
-          className="btn btn-outline-primary"
-          onClick={this.onSave}>
-        Save
-      </button>
-			<Link to="/settings">
-				<button
-            className="btn btn-outline-primary">
-          Settings
+
+      {/* Buttons */}
+      <div className="text-center" role="toolbar">
+        {this.state.running?
+          stopButton:
+          startButton}
+        <button
+            className={"btn btn-info mx-2"
+              + (this.state.running? " disabled" : "")}
+            onClick={this.onSave}>
+          Save
         </button>
-			</Link>
+        <Link to="/settings">
+          <button
+              className="btn btn-info mx-2">
+            Settings
+          </button>
+        </Link>
+      </div>
 		</div>)
 	}
 }

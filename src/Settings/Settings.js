@@ -36,14 +36,14 @@ class Settings extends React.Component {
   // Called when adding a range of numbes
   // nameList: a list of strings for participants
   onBatchAdd = (nameList) => {
-    this.props.onListChange("participants",
-      this.props.participants.concat(nameList));
+	this.props.onListChange("participants",
+	  this.props.participants.concat(nameList));
   }
 
 	render = () => {
 		return (
-			<div>
-        {/* Exit button */}
+			<div className="section">
+		    {/* Exit button */}
 				<Link to="/">
 				<button
 					onClick={this.onExit}>
@@ -51,7 +51,7 @@ class Settings extends React.Component {
 				</button>
 				</Link>
 
-        {/* Participants list */}
+		    {/* Participants list */}
 				<label>
 					Participants list:
 					<textarea
@@ -65,10 +65,10 @@ class Settings extends React.Component {
 					</button>
 				</label>
 
-        {/* Batch add */}
+		    {/* Batch add */}
 				<BatchAdd onAdd={this.onBatchAdd}/>
 
-        {/* Winner list */}
+	    	{/* Winner list */}
 				<label>
 					Winners:
 					<textarea

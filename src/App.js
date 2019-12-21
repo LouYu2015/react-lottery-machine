@@ -15,7 +15,7 @@ class App extends React.Component {
 
   render = () => {
     return (
-      <div className="container">
+      <div>
         <Route exact path="/settings">
           <Settings
             onListChange={this.onListChange}
