@@ -24,6 +24,7 @@ class App extends React.Component {
         </Route>
         <Route exact path="/">
           <Lottery
+            onListChange={this.onListChange}
             participants={this.state.participants}
             winners={this.state.winners} />
         </Route>

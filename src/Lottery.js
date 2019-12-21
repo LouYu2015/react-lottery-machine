@@ -35,6 +35,12 @@ class Lottery extends React.Component {
 		}
   }
 
+  onSave = () => {
+    console.log(this.props.winners);
+    this.props.onListChange("winners",
+      this.props.winners.concat([this.state.currentWinner]));
+  }
+
 	render = () => {
     let startButton = (
 			<button
@@ -61,7 +67,8 @@ class Lottery extends React.Component {
         stopButton:
         startButton}
 			<button
-          className="btn btn-outline-primary">
+          className="btn btn-outline-primary"
+          onClick={this.onSave}>
         Save
       </button>
 			<Link to="/settings">
