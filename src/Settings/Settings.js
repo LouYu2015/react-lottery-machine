@@ -44,43 +44,60 @@ class Settings extends React.Component {
 		return (
 			<div className="section">
 		    {/* Exit button */}
-				<Link to="/">
-				<button
-					onClick={this.onExit}>
-						Back
-				</button>
-				</Link>
+				<p>
+          <Link to="/">
+            <button
+              className="btn btn-primary"
+              onClick={this.onExit}>
+                Back
+            </button>
+          </Link>
+        </p>
 
 		    {/* Participants list */}
-				<label>
-					Participants list:
+        <h1>Participants</h1>
+        <p> Add numbers or names here to be selected:</p>
+				<p>
 					<textarea
 						name="participants"
 						value={this.props.participants.join("\n")}
 						onChange={this.onListTextboxChange} />
-					<button
-						name="participants"
-						onClick={this.onClear}>
-							Clear
-					</button>
-				</label>
+        <br />
+        <button
+          className="btn btn-danger"
+          name="participants"
+          onClick={this.onClear}>
+            Clear
+        </button></p>
+
+        <hr />
 
 		    {/* Batch add */}
+        <h1>Batch import</h1>
+        <p>
+          Click "Add" to insert a range of numbers into the participants list.
+          The range is inclusive on both ends.
+        </p>
 				<BatchAdd onAdd={this.onBatchAdd}/>
 
+        <hr />
+
 	    	{/* Winner list */}
-				<label>
-					Winners:
-					<textarea
-						name="winners"
-						value={this.props.winners.join("\n")}
-						onChange={this.onListTextboxChange} />
-					<button
-						name="winners"
-						onClick={this.onClear}>
-							Clear
-					</button>
-				</label>
+        <h1>Winner History</h1>
+				<p>
+          Past winners are saved to this list.
+          They won't be selected again.
+        </p>
+        <textarea
+          name="winners"
+          value={this.props.winners.join("\n")}
+          onChange={this.onListTextboxChange} />
+        <button
+            className="btn btn-danger"
+            name="winners"
+            onClick={this.onClear}>
+          Clear
+        </button>
 			</div>)
 	}
 }

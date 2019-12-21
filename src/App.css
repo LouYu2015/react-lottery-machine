@@ -8,7 +8,6 @@ body
 {
 	position: relative;
 	min-height: 100%;
-	box-sizing: border-box;
 
 	margin: 0;
 	padding-top: 3vw;
@@ -40,4 +39,84 @@ div.section, div.footer
   
 	text-align: center;
 	overflow:hidden;
+}
+
+/* ====== Horizental line ====== */
+
+hr {
+  border-top: 0.15vw solid rgba(64, 64, 64, 0.25);
+}
+
+/* ====== Number box ====== */
+
+/* Remove arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+/* End remove arrows */
+
+input[type="number"] {
+  height: 1.5em;
+  width: 4em;
+
+  margin: 1vw;
+
+  border: 0.15vw solid rgba(64, 64, 64, 0.25);
+  border-radius: 1vw;
+  outline: none;
+
+  background-color: rgba(255, 255, 255, 0);
+
+  font-size: 1em;
+  text-align: center;
+
+  transition-property: border, box-shadow, background-color;
+  transition-duration: 0.5s;
+}
+
+input[type="number"]:hover {
+  border: 0.15vw solid rgba(32, 128, 255, 0.5);
+  transition-duration: 1s;
+}
+
+input[type="number"]:focus {
+  border: 0.15vw solid rgba(64, 64, 64, 0);
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ====== Text area ====== */
+
+textarea {
+	height: 20vw;
+	width: 100%;
+
+	border: 0.15vw solid rgba(64, 64, 64, 0.25);
+	border-radius: 1vw;
+	outline: none;
+
+	background-color: rgba(255, 255, 255, 0);
+
+	font-size: 2vw;
+	text-align: center;
+
+	transition-property: border, box-shadow, background-color;
+	transition-duration: 0.5s;
+}
+
+textarea:hover {
+	border: 0.15vw solid rgba(32, 128, 255, 0.5);
+	transition-duration: 1s;
+}
+
+textarea:focus {
+	border: 0.15vw solid rgba(64, 64, 64, 0);
+	background-color: rgba(255, 255, 255, 0.25);
 }

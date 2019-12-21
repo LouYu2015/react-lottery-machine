@@ -45,7 +45,9 @@ class BatchAdd extends React.Component {
 					value={this.state.last}
 					onChange={this.onChange} />
 			</label>
-			<button onClick={this.onSubmit}>
+			<button
+					className="btn btn-primary"
+					onClick={this.onSubmit}>
 				Add
 			</button>
 		</form>);
