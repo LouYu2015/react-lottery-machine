@@ -13,9 +13,12 @@ class Lottery extends React.Component {
     inGracePeriod: false};
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.running && !prevState.running) {
-      this.onWinnerUpdate();
+    if (this.state.running !== prevState.running) {
       this.startGracePeriod();
+    }
+
+		if (this.state.running) {
+      setTimeout(this.onWinnerUpdate, updateInterval);
     }
   }
 
@@ -38,11 +41,6 @@ class Lottery extends React.Component {
 			winner = participants[randrange(participants.length)];
 		} while (winners.includes(winner));
 		this.setState({currentWinner: winner});
-		if (this.state.running) {
-      setTimeout(this.onWinnerUpdate, updateInterval);
-		} else {
-      this.startGracePeriod();
-    }
   }
 
   onSave = () => {
