@@ -21,7 +21,10 @@ class Settings extends React.Component {
   
   // Called when the user edits grade period
   onGracePeriodChange = (event) => {
-    this.props.onGracePeriodChange(event.target.value);
+    let newValue = event.target.value;
+    if (newValue >= 0) {
+      this.props.onGracePeriodChange(event.target.value);
+    }
   }
 
   // Called when the user click "clear"
