@@ -8,7 +8,7 @@ import { Route, Router } from 'react-router-dom';
 class App extends React.Component {
   state = {participants: [],
       winners: [],
-      gracePeriod: 3};
+      gracePeriod: 1};
 
   onListChange = (listName, content) => {
     this.setState({[listName]: content});
