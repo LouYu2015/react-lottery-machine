@@ -62,14 +62,23 @@ class Lottery extends React.Component {
       </button>
     );
 
+    let lotteryNumber = (
+      <p className="lotteryNumber">
+        {this.state.currentWinner?
+          this.state.currentWinner:
+          "Ready"}
+      </p>);
+
 		return (
 		<div className="section">
       {/* Lottery number */}
-			<p className="lotteryNumber">
-				{this.state.currentWinner?
-					this.state.currentWinner:
-					"Ready"}
-			</p>
+      {this.canStart()?
+        lotteryNumber:
+        <div class="alert alert-warning">
+          There's not valid participant. Please check settings.
+          Note that, because past winners can't win again, the game can't continue
+          if all participants have win. In this case, please clear the winner list.
+        </div>}
 
       {/* Buttons */}
       <div className="text-center" role="toolbar">
