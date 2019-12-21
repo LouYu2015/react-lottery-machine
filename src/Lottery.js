@@ -9,7 +9,7 @@ let randrange = (n) => {
 
 class Lottery extends React.Component {
 	state = {running: false,
-    currentWinner: "ab"};
+    currentWinner: undefined};
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.running && !prevState.running) {
