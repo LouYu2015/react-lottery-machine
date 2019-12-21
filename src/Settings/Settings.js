@@ -17,7 +17,12 @@ class Settings extends React.Component {
 	onListTextboxChange = (event) => {
 		this.props.onListChange(event.target.name,
 			event.target.value.split("\n"));
-	}
+  }
+  
+  // Called when the user edits grade period
+  onGracePeriodChange = (event) => {
+    this.props.onGracePeriodChange(event.target.value);
+  }
 
   // Called when the user click "clear"
 	onClear = (event) => {
@@ -97,6 +102,19 @@ class Settings extends React.Component {
             onClick={this.onClear}>
           Clear
         </button>
+        
+        <hr />
+
+        {/* Error prevention */}
+        <h1> Error Prevention </h1>
+        <p><label>
+          Ignore consecutive button presses within
+          <input
+            type="number"
+            value={this.props.gracePeriod}
+            onChange={this.onGracePeriodChange} />
+            seconds.
+        </label></p>
 			</div>)
 	}
 }

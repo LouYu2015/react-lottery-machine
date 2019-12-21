@@ -7,10 +7,16 @@ import { Route, Router } from 'react-router-dom';
 
 class App extends React.Component {
   state = {participants: [],
-      winners: []};
+      winners: [],
+      gracePeriod: 3};
 
   onListChange = (listName, content) => {
     this.setState({[listName]: content});
+  }
+
+  onGracePeriodChange = (gracePeriod) => {
+    console.log(gracePeriod);
+    this.setState({gracePeriod: gracePeriod});
   }
 
   render = () => {
@@ -19,14 +25,17 @@ class App extends React.Component {
         <Route exact path="/settings">
           <Settings
             onListChange={this.onListChange}
+            onGracePeriodChange={this.onGracePeriodChange}
             participants={this.state.participants}
-            winners={this.state.winners} />
+            winners={this.state.winners}
+            gracePeriod={this.state.gracePeriod} />
         </Route>
         <Route exact path="/">
           <Lottery
             onListChange={this.onListChange}
             participants={this.state.participants}
-            winners={this.state.winners} />
+            winners={this.state.winners}
+            gracePeriod={this.state.gracePeriod} />
         </Route>
       </div>
     );
