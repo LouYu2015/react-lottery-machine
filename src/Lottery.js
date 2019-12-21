@@ -75,12 +75,7 @@ class Lottery extends React.Component {
             onClick={this.onSave}>
           Save
         </button>
-        <Link to="/settings">
-          <button
-              className="btn btn-info mx-2">
-            Settings
-          </button>
-        </Link>
+        <Link to="/settings" className="btn btn-info mx-2">Settings</Link>
       </div>
 		</div>)
 	}

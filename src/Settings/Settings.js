@@ -45,12 +45,11 @@ class Settings extends React.Component {
 			<div className="section">
 		    {/* Exit button */}
 				<p>
-          <Link to="/">
-            <button
+          <Link
+              to="/"
               className="btn btn-primary"
               onClick={this.onExit}>
-                Back
-            </button>
+            Back
           </Link>
         </p>
 
