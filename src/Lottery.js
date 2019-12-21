@@ -9,11 +9,13 @@ let randrange = (n) => {
 
 class Lottery extends React.Component {
 	state = {running: false,
-    currentWinner: undefined};
+    currentWinner: undefined,
+    inGracePeriod: false};
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.running && !prevState.running) {
       this.onWinnerUpdate();
+      this.startGracePeriod();
     }
   }
 
@@ -38,7 +40,9 @@ class Lottery extends React.Component {
 		this.setState({currentWinner: winner});
 		if (this.state.running) {
       setTimeout(this.onWinnerUpdate, updateInterval);
-		}
+		} else {
+      this.startGracePeriod();
+    }
   }
 
   onSave = () => {
@@ -46,18 +50,25 @@ class Lottery extends React.Component {
       this.props.winners.concat([this.state.currentWinner]));
   }
 
+  startGracePeriod = () => {
+    this.setState({inGracePeriod: true});
+    setTimeout(() => {this.setState({inGracePeriod: false})},
+      this.props.gracePeriod  * 1000);
+  }
+
 	render = () => {
     let startButton = (
 			<button
           onClick={() => this.setState({running: true})}
           className="btn btn-primary mx-2"
-          disabled={!this.canStart()}>
+          disabled={this.state.inGracePeriod || !this.canStart()}>
         Start
       </button>);
     let stopButton = (
 			<button
           onClick={() => this.setState({running: false})}
-          className="btn btn-danger mx-2">
+          className="btn btn-danger mx-2"
+          disabled={this.state.inGracePeriod}>
         Stop
       </button>
     );
