@@ -36,7 +36,6 @@ class Lottery extends React.Component {
   }
 
   onSave = () => {
-    console.log(this.props.winners);
     this.props.onListChange("winners",
       this.props.winners.concat([this.state.currentWinner]));
   }
