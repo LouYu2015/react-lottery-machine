@@ -37,6 +37,11 @@ class App extends React.Component {
             winners={this.state.winners}
             gracePeriod={this.state.gracePeriod} />
         </Route>
+        <div class="footer">
+          <p>
+            Copyright 2019 Yu Lou. About
+          </p>
+        </div>
       </div>
     );
   }

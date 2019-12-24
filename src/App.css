@@ -20,6 +20,8 @@ body
 	font-family: 'Roboto', sans-serif;
 }
 
+/* ====== Section and Footer ====== */
+
 div.section, div.footer
 {
 	margin: 0 8vw 3vw 8vw;
@@ -31,6 +33,26 @@ div.section, div.footer
 	background-size: cover;
 	background-attachment: fixed;
 }
+
+div.footer
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 6vw 0 0 0;
+	border-radius: 0;
+	padding: 0.3vw 0;
+	text-align: center;
+}
+
+div.footer p
+{
+	font-size: 1vw;
+	margin: 0.3vw 0;
+}
+
+/* ====== Lottery number ======*/
 
 .lotteryNumber {
 	box-sizing: border-box;
