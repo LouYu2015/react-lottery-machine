@@ -3,7 +3,8 @@ import './App.css';
 import './Settings/Settings'
 import Settings from './Settings/Settings';
 import Lottery from './Lottery'
-import { Route, Router } from 'react-router-dom';
+import About from './About'
+import { Route, Link } from 'react-router-dom';
 
 class App extends React.Component {
   state = {participants: [],
@@ -37,9 +38,12 @@ class App extends React.Component {
             winners={this.state.winners}
             gracePeriod={this.state.gracePeriod} />
         </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
         <div class="footer">
           <p>
-            Copyright 2019 Yu Lou. About
+            Copyright 2019 Yu Lou. <Link to="/about">About</Link>
           </p>
         </div>
       </div>
