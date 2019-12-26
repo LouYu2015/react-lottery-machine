@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "873ab42c79bb781fbd721de7c294adb3",
+    "revision": "9a8fed31368c401f7d55b1218831f978",
     "url": "/react-lottery-machine/index.html"
   },
   {
-    "revision": "d749ead8b4c619d2cf6b",
+    "revision": "2c5fd09556e7ab5688d6",
     "url": "/react-lottery-machine/static/css/main.397e25c3.chunk.css"
   },
   {
-    "revision": "e170021f6d30c195bf10",
-    "url": "/react-lottery-machine/static/js/2.c1da45e4.chunk.js"
+    "revision": "6d174594498378d279d3",
+    "url": "/react-lottery-machine/static/js/2.81f3ac37.chunk.js"
   },
   {
     "revision": "e928fe768baa9832b5bc57eae021f30c",
-    "url": "/react-lottery-machine/static/js/2.c1da45e4.chunk.js.LICENSE"
+    "url": "/react-lottery-machine/static/js/2.81f3ac37.chunk.js.LICENSE"
   },
   {
-    "revision": "d749ead8b4c619d2cf6b",
-    "url": "/react-lottery-machine/static/js/main.ba7ab0fb.chunk.js"
+    "revision": "2c5fd09556e7ab5688d6",
+    "url": "/react-lottery-machine/static/js/main.c836ef13.chunk.js"
   },
   {
     "revision": "e785149c392f75b2c034",
