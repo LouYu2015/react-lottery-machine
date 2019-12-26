@@ -4,7 +4,7 @@ import './Settings/Settings'
 import Settings from './Settings/Settings';
 import Lottery from './Lottery'
 import About from './About'
-import { Route, Link } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 
 class App extends React.Component {
   state = {participants: [],
@@ -23,24 +23,26 @@ class App extends React.Component {
   render = () => {
     return (
       <div>
-        <Route exact path="/settings">
-          <Settings
-            onListChange={this.onListChange}
-            onGracePeriodChange={this.onGracePeriodChange}
-            participants={this.state.participants}
-            winners={this.state.winners}
-            gracePeriod={this.state.gracePeriod} />
-        </Route>
-        <Route exact path="/">
-          <Lottery
-            onListChange={this.onListChange}
-            participants={this.state.participants}
-            winners={this.state.winners}
-            gracePeriod={this.state.gracePeriod} />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
+        <Switch>
+          <Route exact path="/settings">
+            <Settings
+              onListChange={this.onListChange}
+              onGracePeriodChange={this.onGracePeriodChange}
+              participants={this.state.participants}
+              winners={this.state.winners}
+              gracePeriod={this.state.gracePeriod} />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route>
+            <Lottery
+              onListChange={this.onListChange}
+              participants={this.state.participants}
+              winners={this.state.winners}
+              gracePeriod={this.state.gracePeriod} />
+          </Route>
+        </Switch>
         <div class="footer">
           <p>
             Copyright 2019 Yu Lou. <Link to="/about">About</Link>
