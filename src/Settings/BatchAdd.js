@@ -28,29 +28,33 @@ class BatchAdd extends React.Component {
 	}
 
 	render = () => {
-		return (<form>
-			<label>
-				Start:
-				<input
-					name="start"
-					type="number"
-					value={this.state.start}
-					onChange={this.onChange} />
-			</label>
-			<label>
-				Last:
-				<input
-					name="last"
-					type="number"
-					value={this.state.last}
-					onChange={this.onChange} />
-			</label>
-			<button
-					className="btn btn-primary"
-					onClick={this.onSubmit}>
-				Add
-			</button>
-		</form>);
+		return (
+			<form>
+				<p>
+					Add integers from
+					<input
+						name="start"
+						type="number"
+						value={this.state.start}
+						onChange={this.onChange} />
+					<label>
+						to
+						<input
+							name="last"
+							type="number"
+							value={this.state.last}
+							onChange={this.onChange} />
+					</label>
+					(inclusive) into the participants list.
+				</p>
+				<p>
+					<button
+							className="btn btn-primary"
+							onClick={this.onSubmit}>
+						Add
+					</button>
+				</p>
+			</form>);
 	}
 }
 

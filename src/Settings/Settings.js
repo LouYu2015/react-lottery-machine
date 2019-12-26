@@ -66,7 +66,10 @@ class Settings extends React.Component {
 
 		    {/* Participants list */}
         <h1>Participants</h1>
-        <p> Add numbers or names here to be selected:</p>
+        <p>
+          Numbers or names listed here will be selected.
+          Please enter each entry on a seperate line.
+        </p>
 				<p>
 					<textarea
 						name="participants"
@@ -84,10 +87,6 @@ class Settings extends React.Component {
 
 		    {/* Batch add */}
         <h1>Batch import</h1>
-        <p>
-          Click "Add" to insert a range of numbers into the participants list.
-          The range is inclusive on both ends.
-        </p>
 				<BatchAdd onAdd={this.onBatchAdd}/>
 
         <hr />
@@ -95,8 +94,8 @@ class Settings extends React.Component {
 	    	{/* Winner list */}
         <h1>Winner History</h1>
 				<p>
-          Past winners are saved to this list.
-          They won't be selected again.
+          When you click "save", the winner will be saved to this list.
+          Those winners won't be selected again.
         </p>
         <textarea
           name="winners"
